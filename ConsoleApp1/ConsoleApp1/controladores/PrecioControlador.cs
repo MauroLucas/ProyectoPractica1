@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleApp1.modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,24 @@ namespace ConsoleApp1.controladores
 {
     class PrecioControlador
     {
-        public int calcularPrecioInmueble(String direccion,int metros2,bool esNuevo,int precioBase,int cantVentanas,int nroPiso)
+        public double calcularPrecioInmueble(String direccion,int metros2,bool esNuevo,int precioBase,int cantVentanas,int nroPiso, String tipoInmueble)
         {
-            return 0;
+            
+            double precioFinal = 0;
+            switch (tipoInmueble)
+            {
+                case "Local":
+                    Local local = new Local(direccion,metros2,esNuevo,precioBase,cantVentanas);
+                    precioFinal = local.calcularPrecio();
+                    break;
+                case "Piso":
+                    Piso piso = new Piso(direccion, metros2, esNuevo, precioBase, nroPiso);
+                    precioFinal = piso.calcularPrecio();
+                    break;
+                default: break;
+            }
+
+            return precioFinal;
         }
     }
 }

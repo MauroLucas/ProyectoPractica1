@@ -24,12 +24,13 @@ namespace ConsoleApp1.vistas
                 Console.WriteLine("1-Calcular valor del inmueble");
                 Console.WriteLine("2-Salir");
                 opcion = int.Parse(Console.ReadLine());
+                SeleccionarAccion(ref opcion);
                 
             } while (opcion != 2);
             
         }
 
-        private void SeleccionarAccion(int opcion)
+        private void SeleccionarAccion(ref int opcion)
         {
             switch (opcion)
             {
@@ -40,6 +41,7 @@ namespace ConsoleApp1.vistas
                     break;
                 default: 
                     Console.WriteLine("La opción ingresada es inválida");
+                    Console.ReadKey();
                     break;
 
             }
@@ -47,18 +49,43 @@ namespace ConsoleApp1.vistas
 
         private void MostrarMenuCalcularInmubele()
         {
-            string direccion;
-            int metros2;
-            bool esNuevo;
-            int precioBase;
-            int cantVentanas;
-            int nroPiso;
-            int opcion;
+            string direccion = "";
+            int metros2 = 0;
+            bool esNuevo = false;
+            String tipoInmueble = "";
+            int precioBase = 0;
+            int cantVentanas = 0;
+            int nroPiso = 0;
             
+            
+            IngresarDireccion(ref direccion);
+            IngresarMetrosCuadrados(ref metros2);
+            IngresarEstadoInmueble(ref esNuevo);
+            IngresarTipoInmueble(ref cantVentanas, ref nroPiso, ref tipoInmueble);
+            IngresarPrecioBase(ref precioBase);
+            
+            PrecioControlador precioControlador = new PrecioControlador();          
+            
+            double resultado = precioControlador.calcularPrecioInmueble(direccion, metros2, esNuevo, precioBase, cantVentanas, nroPiso, tipoInmueble);
+            Console.WriteLine("El precio del inmueble es de " + resultado);
+            Console.ReadKey();
+
+        }
+
+        private void IngresarDireccion(ref String direccion)
+        {
             Console.WriteLine("Ingrese la direccion del inmuble");
             direccion = Console.ReadLine();
+        }
+
+        private void IngresarMetrosCuadrados(ref int metros2)
+        {
             Console.WriteLine("Ingrese los metros cuadrados");
             metros2 = int.Parse(Console.ReadLine());
+        }
+
+        private void IngresarEstadoInmueble(ref bool esNuevo)
+        {
             Console.WriteLine("Ingrese el estado del inmueble");
             Console.WriteLine("1- Nuevo (Menos de 15 años)");
             Console.WriteLine("2- Usado");
@@ -71,7 +98,13 @@ namespace ConsoleApp1.vistas
                     esNuevo = false;
                     break;
 
-            }            
+            }
+
+        }
+
+        private void IngresarTipoInmueble(ref int cantVentanas, ref int nroPiso, ref String tipoInmueble)
+        {
+            int opcion;
             Console.WriteLine("¿Qué tipo de inmubele desea calcular?");
             Console.WriteLine("1- Piso");
             Console.WriteLine("2- Local");
@@ -79,10 +112,12 @@ namespace ConsoleApp1.vistas
             switch (opcion)
             {
                 case 1:
+                    tipoInmueble = "Piso";
                     Console.WriteLine("Ingrese el numero de piso");
                     nroPiso = int.Parse(Console.ReadLine());
                     break;
                 case 2:
+                    tipoInmueble = "Local";
                     Console.WriteLine("Ingrese el número de ventanas");
                     cantVentanas = int.Parse(Console.ReadLine());
                     break;
@@ -90,8 +125,12 @@ namespace ConsoleApp1.vistas
                     Console.WriteLine("La opción ingresada es invalida");
                     break;
             }
-            PrecioControlador precioControlador = new PrecioControlador();
 
+        }
+        private void IngresarPrecioBase(ref int precioBase)
+        {
+            Console.WriteLine("Ingrese el precio base del inmueble");
+            precioBase = int.Parse(Console.ReadLine());
         }
     }
 }
