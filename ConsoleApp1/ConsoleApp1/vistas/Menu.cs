@@ -80,8 +80,24 @@ namespace ConsoleApp1.vistas
 
         private void IngresarMetrosCuadrados(ref int metros2)
         {
-            Console.WriteLine("Ingrese los metros cuadrados");
-            metros2 = int.Parse(Console.ReadLine());
+            bool continua;
+            do
+            {
+                try
+                {
+                    continua = false;
+                    Console.WriteLine("Ingrese los metros cuadrados");
+                    metros2 = int.Parse(Console.ReadLine());
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine("Debe ingresar un numero entero");
+                    continua = true;
+                }
+
+            } while (continua);
+            
+            
         }
 
         private void IngresarEstadoInmueble(ref bool esNuevo)

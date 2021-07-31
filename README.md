@@ -1,70 +1,42 @@
-# Proyecto Practica
+# Título del Proyecto
 
 _Acá va un párrafo que describa lo que es el proyecto_
 
-## Comenzando 🚀
+## Comenzando
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
-
-Mira **Deployment** para conocer como desplegar el proyecto.
-
+Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas.
 
 ### Pre-requisitos 📋
 
-_Que cosas necesitas para instalar el software y como instalarlas_
-
 ```
-Da un ejemplo
+Para poder ejecutar la aplicacion de consola debera tenes instalado .NET Framework 4.7.2 y como IDE Visual Studio Community 2019 
 ```
 
 ### Instalación 🔧
 
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
-
-_Dí cómo será ese paso_
-
 ```
-Da un ejemplo
+Ingresa a https://visualstudio.microsoft.com/es/vs/community/ para descargar el instalador de Visual Studio Community 2019
 ```
 
-_Y repite_
-
 ```
-hasta finalizar
+Ejecutar el archivo vs_Community y instalar.
 ```
 
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
-
-## Ejecutando las pruebas ⚙️
-
-_Explica como ejecutar las pruebas automatizadas para este sistema_
-
+```
+Cuando procedamos a instalar debemos seleccionar como mínimo "Desarrollo de escritorio de .Net"
+```
 ### Analice las pruebas end-to-end 🔩
 
-_Explica que verifican estas pruebas y por qué_
-
 ```
-Da un ejemplo
+Dentro del Reporsitorio Ejecutar el archivo .sln 
 ```
 
-### Y las pruebas de estilo de codificación ⌨️
-
-_Explica que verifican estas pruebas y por qué_
-
 ```
-Da un ejemplo
+Una vez avierto el Visual Studio presionar ctrl + f5 para iniciar la aplicacion de consola. 
 ```
-
-## Despliegue 📦
-
-_Agrega notas adicionales sobre como hacer deploy_
-
-## Construido con 🛠️
-
-Visual Studio community versión 2019.
 
 ## Autores ✒️
 
 _Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
 
-* **Mauro Pereyra** - https://github.com/MauroLucas
+* **Mauro Pereyra** - *Trabajo Inicial* - [MauroLucas](https://github.com/MauroLucas)
